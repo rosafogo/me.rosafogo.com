@@ -6,9 +6,12 @@
 
 @font-face {
     font-family: 'Adwaita Sans';
-    src: local('Adwaita Sans Extrabold Italic'), local('AdwaitaSans-ExtraboldItalic'), url('https://fonts.cdnfonts.com/s/39754/AdwaitaSansExtraboldItalic.woff') format('woff');
+    src: url('https://cdn.jsdelivr.net/gh/hfsworks/fonts@master/AdwaitaSans-Extrabold.woff2') format('woff2'),
+         local('Adwaita Sans Extrabold'), 
+         local('AdwaitaSans-Extrabold');
     font-weight: 800;
-    font-style: italic;
+    font-style: normal;
+    font-display: swap;
 }
 
 body {
@@ -36,10 +39,16 @@ body {
 
 .bg-flower {
     position: absolute;
-    font-size: 3rem;
-    opacity: 0.15;
-    filter: grayscale(30%) brightness(1.2);
-    animation: float 8s ease-in-out infinite;
+    opacity: 0.12;
+    filter: grayscale(40%) brightness(1.2) contrast(0.9);
+    animation: float-bg 15s ease-in-out infinite;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+@keyframes float-bg {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
 }
 
 .container {
@@ -141,15 +150,6 @@ header h1 {
     box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
 }
 
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0) rotate(0deg);
-    }
-    50% {
-        transform: translateY(-15px) rotate(5deg);
-    }
-}
-
 .fade-in {
     animation: fadeIn 1s ease-out;
 }
@@ -196,6 +196,6 @@ header h1 {
     }
     
     .bg-flower {
-        font-size: 2rem;
+        width: 50px !important;
     }
 }
